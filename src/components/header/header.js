@@ -7,8 +7,7 @@ function Header() {
 
     const menuToggle = () => {
         if (window.innerWidth > 767.98) {            
-            settoggle("flex");
-            
+            settoggle("flex");            
         }else{
             toggle === "none"? settoggle("flex"): settoggle("none");      
         }
