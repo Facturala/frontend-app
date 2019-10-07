@@ -1,0 +1,15 @@
+.card:not(.card--background){
+    border-radius: 0;
+    background-color: black;
+}
+.card--background{
+    border-radius: 0;
+    background-image: url('../resources/bart-zimny-W5XTTLpk1-I-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    filter: grayscale(50%);   
+}
+.form{
+    background: black;
+}
