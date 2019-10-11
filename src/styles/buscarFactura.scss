@@ -1,15 +1,32 @@
+@import 'colors&Fonts.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+}
 .card:not(.card--background){
     border-radius: 0;
     background-color: black;
 }
 .card--background{
-    border-radius: 0;
-    background-image: url('../resources/bart-zimny-W5XTTLpk1-I-unsplash.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     border: none;
-    filter: grayscale(50%);   
 }
 .form{
     background: black;
+}
+.buscarFactura-row{
+    height: 70vh;
+    // background: red;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 99%;
+}
+.buscarFactura-row__section:last-child{
+    // background: red;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    article{
+        max-width: 70vh;
+    }
 }

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <section className="pl-5 pr-5 pt-5">
+      <section className="p-0">
         <BuscarFactura></BuscarFactura>
       </section>
     </div>

@@ -1,21 +1,23 @@
-@import 'flexbox';
+@import 'colors&Fonts.scss';
 
-$h1-size: 24px;
-$black-color: #000;
-
-.header{
-    background: $black-color;
-}
 .navbar__title{
     font-size: $h1-size;
+    font-family: $font-title;
+    font-weight: 500;
+    color: $font-color1;
 }
 .navbar-menu__item{
     margin: 5px;
-    border-bottom: 2px solid $black-color;
+    border-bottom: 1px solid $white-color;;
 }
-.navbar-menu__item:not(:nth-child(3)):hover
-// .navbar-menu__item:not(:nth-child(4)):hover
-{
-    border-bottom: 2px solid #fff;
+.navbar-menu__item--button{
+    margin: 5px;
+}
+.navbar-menu__item:hover{
+    border-bottom: 2px solid $black-color;;
     transition: 0.8s;
+}
+.navbar-menu__link{
+    color: $font-color1;
+    font-weight: 700;
 }
