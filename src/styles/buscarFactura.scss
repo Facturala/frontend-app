@@ -1,32 +1,74 @@
 @import 'colors&Fonts.scss';
 
-*{
-    margin: 0;
-    padding: 0;
+@mixin buscarFactura($pading-top) {
+    justify-content: space-around;
+    padding-top: $pading-top;
 }
-.card:not(.card--background){
+
+.card:not(.card--background) {
     border-radius: 0;
     background-color: black;
 }
-.card--background{
+
+.card--background {
     border: none;
 }
-.form{
+
+.form {
     background: black;
 }
-.buscarFactura-row{
-    height: 70vh;
-    // background: red;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 99%;
+
+.buscarFactura-row {
+    @include buscarFactura(0)
 }
-.buscarFactura-row__section:last-child{
-    // background: red;
-    display:flex;
+
+.buscarFactura-row__section:last-child {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    article{
+    justify-content: center;
+    img {
+        height: 300px;
+    }
+    article {
         max-width: 70vh;
+    }
+}
+
+@media(max-width:768px) {
+    .buscarFactura-row {
+        @include buscarFactura(4px);
+    }
+    .buscarFactura-row__section:not(:last-child) {
+        padding-top: 0px;
+    }
+    .buscarFactura-row__section:last-child {
+        img {
+            margin-top: 30px;
+            height: 150px;
+        }
+
+        article {
+            max-width: 100%;
+        }
+    }
+}
+@media(min-width:768px) {
+    .buscarFactura-row {
+        @include buscarFactura(50px);
+        align-items:flex-start;
+    }
+
+    .buscarFactura-row__section:not(:last-child) {
+        padding-top: 90px;
+    }
+
+    .buscarFactura-row__section:last-child {
+        img {
+            height: 200px;
+        }
+
+        article {
+            max-width: 100%;
+        }
     }
 }

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <section className="p-0">
+      <section className="container-fluid">
         <BuscarFactura></BuscarFactura>
       </section>
     </div>
