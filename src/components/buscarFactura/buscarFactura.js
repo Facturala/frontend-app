@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/buscarFactura.scss';
+import './buscarFactura.scss';
 import online from '../../resources/online.svg'
 
 export default function BuscarFactura() {

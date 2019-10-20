@@ -1,0 +1,14 @@
+@import '../../styles/colors&Fonts.scss';
+
+.planes{
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background:$main-color3; 
+}
+.planes__card{
+    margin: 10px;   
+    border-radius: 35px;
+    min-height: 325px;
+    line-height: 23px;
+}

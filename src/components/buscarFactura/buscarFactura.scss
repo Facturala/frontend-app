@@ -1,17 +1,14 @@
-@import 'colors&Fonts.scss';
+@import '../../styles/colors&Fonts.scss';
 
-@mixin buscarFactura($pading-height, $pading-width) {
+@mixin buscarFactura($pading-height, $pading-width, $min-height, $magin-bottom) {
     justify-content: space-around;
     padding: $pading-height $pading-width;
-    min-height: 75vh;
+    min-height: $min-height;
+    margin-bottom: $magin-bottom;
 }
 
 .card--background {
     border: none;
-}
-
-.buscarFactura-row {
-    @include buscarFactura(0, 30px)
 }
 
 .buscarFactura-row__section:last-child {
@@ -35,9 +32,10 @@ h2{
     font-weight: bold;
 }
 
+/*mobile*/
 @media(max-width:768px) {
     .buscarFactura-row {
-        @include buscarFactura(4px, 0);
+        @include buscarFactura(4px, 0, 25vh, 50px);
     }
     .buscarFactura-row__section:not(:last-child) {
         padding-top: 0px;
@@ -53,9 +51,10 @@ h2{
     }
 }
 
+/*tablet*/
 @media(min-width:768px) {
     .buscarFactura-row {
-        @include buscarFactura(10px, 4%);
+        @include buscarFactura(10px, 4%, 30vh, 50px);
         align-items:flex-start;
     }
     .buscarFactura-row__section:not(:last-child) {
@@ -72,3 +71,24 @@ h2{
         }
     }
 }
+
+// /*Desktop*/
+// @media(min-width:1366px) {
+//     .buscarFactura-row {
+//         @include buscarFactura(10px, 4%, 30vh, 50px);
+//         align-items:flex-start;
+//     }
+//     .buscarFactura-row__section:not(:last-child) {
+//         padding-top: 100px;
+//     }
+//     .buscarFactura-row__section:last-child {
+//         img {
+//             height: 200px;
+//         }
+//         article {
+//             display: flex;
+//             justify-content: flex-end;
+//             max-width: 100%;
+//         }
+//     }
+// }

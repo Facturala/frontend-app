@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+import './registro.scss';
 
 export default function RegistroCadena(props) {
     return (
-        <section >
-            <div className="d-flex justify-content-around">
+        <section className="card col-md-6 col-lg-5 col-sm-12 mb-3 p-4 ">
                 <form
                     onSubmit={props.changeComponent}
-                    className="col-md-12 col-lg-5 mb-3">
+                    >
                     <div className="form-group">
                         <label htmlFor="companyName">Nombre de negocio</label>
                         <input type="text" className="form-control" id="companyName" placeholder="nombre de cadena de establecimiento" />
@@ -22,7 +23,6 @@ export default function RegistroCadena(props) {
                         Guardar y siguiente
                     </button>
                 </form>
-            </div>
         </section>
     )
 }

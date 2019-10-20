@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/headers.scss';
+import './headers.scss';
 import menu from '../../resources/menu.png'
 
 function Header() {

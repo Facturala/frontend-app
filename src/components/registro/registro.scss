@@ -1,0 +1,15 @@
+@import "../../styles/colors&Fonts.scss";
+
+.registro {
+  padding: 20px 10px;
+  background-color: $main-color5;
+  display: flex;
+  justify-content: space-evenly;
+  .card {
+    border-radius: 20px;
+  }
+}
+.registro__texto {
+  line-height: 30px;
+  font-size: $p-size;
+}
