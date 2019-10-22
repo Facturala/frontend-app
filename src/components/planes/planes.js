@@ -18,8 +18,8 @@ export default function Planes() {
                     <h1 className="card-title pricing-card-title">$0 <small className="text-muted">/ mes</small></h1>
                     <ul className="list-unstyled mt-3 mb-4">
                         <li><p>50 facturas al mes</p></li>
-                        <li><p>facturas por email a tus cientes 📧</p></li>
-                        <li><p>Acceso a dashboard para tu negocio 📈</p></li>
+                        <li><p>facturas por email a tus cientes <span role="img" aria-label="correo electronico">📧</span></p></li>
+                        <li><p>Acceso a dashboard para tu negocio <span role="img" aria-label="dashboard">📊</span></p></li>
                     </ul>
                     <button type="button" className="btn btn-lg btn-block btn-warning">Adquirir plan</button>
                 </div>
@@ -32,8 +32,8 @@ export default function Planes() {
                     <h1 className="card-title pricing-card-title">$50 cop<small className="text-muted">/ factura</small></h1>
                     <ul className="list-unstyled mt-3 mb-4">
                         <li><p>Facturas ilimitadas</p></li>
-                        <li><p>facturas por email a tus cientes 📧</p></li>
-                        <li><p>Acceso a dashboard para tu negocio 📈</p></li>
+                        <li><p>facturas por email a tus cientes <span role="img" aria-label="correo electronico">📧</span></p></li>
+                        <li><p>Acceso a dashboard para tu negocio <span role="img" aria-label="dashboard">📊</span></p></li>
                     </ul>
                     <button type="button" className="btn btn-lg btn-block btn-warning">Adquirir plan</button>
                 </div>

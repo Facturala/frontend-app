@@ -43,20 +43,16 @@ export default function Footer() {
                         </p>
                     </div>
                     <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <h6 className="text-uppercase font-weight-bold">Contact</h6>
+                        <h6 className="text-uppercase font-weight-bold">Contacto</h6>
                         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
-                        <p>
-                            <i className="fas fa-home mr-3"></i>Bogota D.C. - Colombia</p>
-                        <p>
-                            <i className="fas fa-envelope mr-3"></i>facturandolatam@gmail.com</p>
-                        <p>
-                            <i className="fas fa-phone mr-3"></i> + 57 304 457 5306</p>
-                        <p>
-                            <i className="fas fa-print mr-3"></i> + 57 350 575 4798</p>
+                        <p><span role="img" aria-label="icono de bogota">🏙️</span> Bogota D.C. - Colombia</p>
+                        <p><span role="img" aria-label="correo electronico">📧</span> facturandolatam@gmail.com</p>
+                        <p><span role="img" aria-label="telefono celular">📱</span>  + 57 304 457 5306</p>
+                        <p><span role="img" aria-label="telefono celular">📱</span>  + 57 350 575 4798</p>
                     </div>
                 </div>
             </div>
-            <div className="footer-copyright text-center py-3"><h6>© 2020 Copyright: Facturala.com</h6><p>Developed with ❤️ in Latin America</p>
+            <div className="footer-copyright text-center"><h6>© 2020 Copyright: Facturala.com</h6><p>Developed with <span role="img" aria-label="corazon">❤️</span> in Latin America</p>
             </div>
         </footer>
     );

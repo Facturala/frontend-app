@@ -16,7 +16,7 @@ export default function BuscarFactura() {
             </section>
             <section className="buscarFactura-row__section col-md-6 animated bounceInRight">
                 <div>
-                    <img src={online} className=""></img>
+                    <img src={online} className="" alt="factura en el telefono"></img>
                 </div>
                 <article className="card--background card p-1 text-black">
                     <h2 className="card__title card-title text-right">Que tu factura te llegue al telefono</h2>
