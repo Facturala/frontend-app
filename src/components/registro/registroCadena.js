@@ -1,48 +1,50 @@
 import React, { useState } from 'react'
+import uuid from 'react-uuid';
 
 import './registro.scss';
 
-export default function RegistroCadena({ guardarNegocio }) {
-    const [negocio, setNegocio] = useState({
-        nombreNegocio: "",
-        nitNegocio: ""
+export default function RegistroCadena({ guardarCadena }) {
+    const [cadena, setCadena] = useState({
+        id: uuid(),
+        nombreCadena: "",
+        nitCadena: ""
     });
 
     const actualizarState = (e) => {
-        setNegocio({
-            ...negocio,
+        setCadena({
+            ...cadena,
             [e.target.name]: e.target.value
         })
     }
 
-    const enviarNegocio = e => {
+    const enviarCadena = e => {
         e.preventDefault();
-        guardarNegocio(negocio)
+        guardarCadena(cadena)
     }
 
     return (
         <section className="card col-md-6 col-lg-5 col-sm-12 mb-3 p-4 ">
             <form
-                onSubmit={enviarNegocio}
+                onSubmit={enviarCadena}
             >
                 <div className="form-group">
-                    <label htmlFor="nombreNegocio">Nombre de negocio a la cual pertenece tu establecimiento</label>
+                    <label htmlFor="nombreCadena">Nombre de cadena a la cual pertenece tu establecimiento</label>
                     <input
                         type="text"
                         className="form-control"
-                        id="nombreNegocio"
+                        id="nombreCadena"
                         placeholder="nombre de cadena de establecimiento"
-                        name="nombreNegocio"
+                        name="nombreCadena"
                         onChange={actualizarState} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="nitNegocio">Nit de negocio</label>
+                    <label htmlFor="nitCadena">Nit de Cadena</label>
                     <input
                         type="number"
                         className="form-control"
-                        id="nitNegocio"
-                        placeholder="numero de Nit de negocio"
-                        name="nitNegocio"
+                        id="nitCadena files"
+                        placeholder="numero de Nit de Cadena"
+                        name="nitCadena"
                         onChange={actualizarState} />
                 </div>
                 <button

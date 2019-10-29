@@ -4,10 +4,15 @@ import RegistroEstablecimiento from './registroEstablecimiento';
 
 import './registro.scss';
 
+//Redux
+import { crearNuevoEstablecimientoAction } from '../../actions/establecimientoActions';
+import { crearNuevaCadenaAction } from '../../actions/cadenaActions'
+import { useDispatch } from 'react-redux';
+
 
 export default function Registro() {
     const [establecimiento, setEstablecimiento] = useState();
-    const [negocio, setNegocio] = useState();
+    const [cadena, setCadena] = useState();
     const [form, setForm] = useState(false)
 
     const cambiarComponente = () => {
@@ -15,14 +20,35 @@ export default function Registro() {
     }
 
     const guardarEstablecimiento = establecimiento => {
-        // const nuevoEstablecimiento = [...establecimiento, establecimiento1];
+        // const nuevoEstablecimiento = [...establecimiento, establecimiento];
         setEstablecimiento(establecimiento);
         cambiarComponente();
     }
 
-    const guardarNegocio = negocio => {
-        setNegocio(negocio)
+    const guardarCadena = cadena => {
+        setCadena(cadena)
     }
+
+    //crear nuevo establecimiento
+    const dispatch = useDispatch();
+    const agregarEstablecimiento = (nuevoEstablecimiento) => dispatch(crearNuevoEstablecimientoAction(nuevoEstablecimiento));
+    const agregarCadena = (nuevaCadena) => dispatch(crearNuevaCadenaAction(nuevaCadena));
+
+    //enviar el nuevo establecimiento al backend
+    const enviarNuevoEstablecimiento = (e) => {
+        e.preventDefault();
+        agregarEstablecimiento(
+            establecimiento
+        )
+    }
+    //enviar la nueva cadena al backend
+    const enviarNuevaCadena = (e) => {
+        e.preventDefault();
+        agregarCadena(
+            cadena
+        )
+    }
+
     return (
         <div className="registro row justify-content-around pb-5">
             <header className="text-center mb-5">
@@ -40,7 +66,9 @@ export default function Registro() {
                     big data disponible a tu alcanze que te ayudara a tomar decisioes correctas para tu negocio.
                 </p>
             </article>
-            {form === false ? <RegistroEstablecimiento guardarEstablecimiento={guardarEstablecimiento} /> : <RegistroCadena guardarNegocio={guardarNegocio} />}
+            {form === false ? <RegistroEstablecimiento guardarEstablecimiento={guardarEstablecimiento} /> : <RegistroCadena guardarCadena={guardarCadena} />}
+            <button type="button" onClick={enviarNuevoEstablecimiento}>agregar establecimiento</button>
+            <button type="button" onClick={enviarNuevaCadena}>agregar cadena</button>
         </div >
     )
 }
