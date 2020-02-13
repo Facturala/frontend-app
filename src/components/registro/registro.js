@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RegistroCadena from './registroCadena';
 import RegistroEstablecimiento from './registroEstablecimiento';
 
@@ -22,11 +22,12 @@ export default function Registro() {
     const guardarEstablecimiento = establecimiento => {
         // const nuevoEstablecimiento = [...establecimiento, establecimiento];
         setEstablecimiento(establecimiento);
-        cambiarComponente();
     }
 
     const guardarCadena = cadena => {
         setCadena(cadena)
+        agregarCadena(cadena);//envia la nueva cadena al backend
+        cambiarComponente();
     }
 
     //crear nuevo establecimiento
@@ -40,14 +41,7 @@ export default function Registro() {
         agregarEstablecimiento(
             establecimiento
         )
-    }
-    //enviar la nueva cadena al backend
-    const enviarNuevaCadena = (e) => {
-        e.preventDefault();
-        agregarCadena(
-            cadena
-        )
-    }
+    }    
 
     return (
         <div className="registro row justify-content-around pb-5">
@@ -66,9 +60,8 @@ export default function Registro() {
                     big data disponible a tu alcanze que te ayudara a tomar decisioes correctas para tu negocio.
                 </p>
             </article>
-            {form === false ? <RegistroEstablecimiento guardarEstablecimiento={guardarEstablecimiento} /> : <RegistroCadena guardarCadena={guardarCadena} />}
+            {form === false ? <RegistroCadena guardarCadena={guardarCadena} /> : <RegistroEstablecimiento guardarEstablecimiento={guardarEstablecimiento} />}
             <button type="button" onClick={enviarNuevoEstablecimiento}>agregar establecimiento</button>
-            <button type="button" onClick={enviarNuevaCadena}>agregar cadena</button>
         </div >
     )
 }

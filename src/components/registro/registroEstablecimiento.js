@@ -1,22 +1,44 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import clienteAxios from '../../config/axios';
+import axios from 'axios';
 
-export default function RegistroEstablecimiento({guardarEstablecimiento}) {
+export default function RegistroEstablecimiento({ guardarEstablecimiento }) {
     const [establecimiento, setEstablecimiento] = useState({
         nombreEstablecimeinto: '',
         direccionEstablecimiento: '',
         telefonoEstablecimiento: '',
         emailEstablecimiento: '',
-        contraseñaEstablecimiento: ''
-    })
+        contraseñaEstablecimiento: '',
+        fk_cadena:'ghj'
+    });
+    const [validarFormulario, setValidarFormulario] = useState(false);
+
+    //se actualiza el state cada vez que elusuario tipea
     const actualizarState = (e) => {
         setEstablecimiento({
             ...establecimiento,
             [e.target.name]: e.target.value
         })
     }
+    const getCadenaId = async () => {
+        let estableciminetoId = await clienteAxios.get('/cadena');
+        // setEstablecimiento.fk_cadena(estableciminetoId.data.id)
+        console.log(establecimiento.fk_cadena);
+    }
+    getCadenaId();
 
-    const enviarEntablecimiento = (e) =>{
+    const enviarEntablecimiento = (e) => {
         e.preventDefault();
+        if (
+            establecimiento.nombreEstablecimeinto.trim() === '' ||
+            establecimiento.direccionEstablecimiento.trim() === '' ||
+            establecimiento.telefonoEstablecimiento.trim() === '' ||
+            establecimiento.emailEstablecimiento.trim() === '' ||
+            establecimiento.contraseñaEstablecimiento.trim() === ''
+        ) {
+            setValidarFormulario(true);
+            return
+        }
         guardarEstablecimiento(establecimiento)
     }
 
@@ -26,7 +48,7 @@ export default function RegistroEstablecimiento({guardarEstablecimiento}) {
                 onSubmit={enviarEntablecimiento}
             >
                 <div className="form-group">
-                    <label htmlFor="nombreEstablecimeinto">Nombre</label>
+                    <label htmlFor="nombreEstablecimeinto">*Nombre</label>
                     <input
                         type="text"
                         className="form-control"
@@ -36,7 +58,7 @@ export default function RegistroEstablecimiento({guardarEstablecimiento}) {
                         onChange={actualizarState} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="direccionEstablecimiento">Direccion</label>
+                    <label htmlFor="direccionEstablecimiento">*Direccion</label>
                     <input
                         type="text"
                         className="form-control"
@@ -46,7 +68,7 @@ export default function RegistroEstablecimiento({guardarEstablecimiento}) {
                         onChange={actualizarState} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="telefonoEstablecimiento">Telefono</label>
+                    <label htmlFor="telefonoEstablecimiento">*Telefono</label>
                     <input
                         type="number"
                         className="form-control"
@@ -56,7 +78,7 @@ export default function RegistroEstablecimiento({guardarEstablecimiento}) {
                         onChange={actualizarState} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="emailEstablecimiento">Correo</label>
+                    <label htmlFor="emailEstablecimiento">*Correo</label>
                     <input
                         type="email"
                         className="form-control"
@@ -66,7 +88,7 @@ export default function RegistroEstablecimiento({guardarEstablecimiento}) {
                         onChange={actualizarState} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="contraseñaEstablecimiento">Contraseña</label>
+                    <label htmlFor="contraseñaEstablecimiento">*Contraseña</label>
                     <input
                         type="password"
                         className="form-control"
@@ -75,8 +97,13 @@ export default function RegistroEstablecimiento({guardarEstablecimiento}) {
                         name="contraseñaEstablecimiento"
                         onChange={actualizarState} />
                 </div>
-                <button type="submit" className="btn btn-primary btn-md btn-block">Registrar</button>
+                <button type="submit" className="btn btn-primary btn-md btn-block">*Registrar</button>
             </form>
+            {
+                validarFormulario === true ?
+                    <div className="alert alert-danger mt-2" role="alert">Los campos marcados con * son obligatorios</div> :
+                    null
+            }
         </section>
     )
 }

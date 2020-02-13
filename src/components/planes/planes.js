@@ -5,7 +5,7 @@ export default function Planes() {
     return (
         <div className="planes row justify-context-center">
             <header className="col-md-12 mb-3 text-center text-white">
-                <h2>Plan para tu negocio</h2>
+                <h2>P lan para tu negocio</h2>
                 <p>Perfecto para tu negocio o empresa, puedes empezar a generar facturas de tus ventas para tus clientes, ellos la recibiran directo en su telefono movil.
                 <br />Pagas solo por las facturas que envias.
                 </p>

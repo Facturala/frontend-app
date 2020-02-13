@@ -3,7 +3,7 @@ import {
     AGREGAR_CADENA_EXITO,
     AGREGAR_CADENA_ERROR
 } from '../types/index';
-import clienteAxios from '../config/axios'
+import clienteAxios from '../config/axios';
 
 export function crearNuevaCadenaAction(cadena) {
     return dispatch => {
